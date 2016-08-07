@@ -5,6 +5,7 @@
 ![Screenshot with off state, on state and custom color](preview.png)
 
 Scalable SVG toggle buttons, HTML/CSS only, no dependencies, yeah!
+Aims for a fail-well approach, if svg is somehow not supported, the Regular Joe&trade; checkbox can be displayed.
 
 Currently uses CSS custom properties, [limited support](http://caniuse.com/#search=css%20variables), planned for an own branch.
 
@@ -64,8 +65,8 @@ and the CSS:
 ## TODO:
 
 - [ ] Detach CSS custom properties version to own branch
-- [ ] Tests
-- [ ] Provide SASS file
+- [ ] Compatibility tests
+- [ ] Provide SASS version
 - [ ] Accessibility
 
 
