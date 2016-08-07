@@ -1,21 +1,21 @@
 
 .tb--svg {
-	width: 48px;
+	width: 32px;
 }
 /* SVG Styles */
 .panel__body,
 .knob__body {
 	fill: #FFFFFF;
-	transition: fill 100ms ease;
+	transition: fill 200ms ease;
 }
 .panel__border,
 .knob__border {
 	fill: #999999;
-	transition: fill 100ms ease;
+	transition: fill 200ms ease;
 }
 .knob__body,
 .knob__border {
-	transition: transform 100ms ease-in-out;
+	transition: transform 200ms cubic-bezier(0.82, 0.02, 0.21, 0.99), fill 200ms ease;
 }
 
 /* On */
