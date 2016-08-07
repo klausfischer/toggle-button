@@ -1,32 +1,46 @@
-
-.tb--svg {
+label {
+	display: inline-block;
+}
+.toggle-button-trigger {
+	display: none;
+}
+.toggle-button {
 	width: 32px;
-}
-/* SVG Styles */
-.panel__body,
-.knob__body {
-	fill: #FFFFFF;
-	transition: fill 200ms ease;
-}
-.panel__border,
-.knob__border {
-	fill: #999999;
-	transition: fill 200ms ease;
-}
-.knob__body,
-.knob__border {
-	transition: transform 200ms cubic-bezier(0.82, 0.02, 0.21, 0.99), fill 200ms ease;
+	height: 18px;
+	position: relative;
+	top: 4px;
 }
 
-/* On */
-#cb:checked + .tb--svg .panel__body,
-#cb:checked + .tb--svg .panel__border,
-#cb:checked + .tb--svg .knob__border {
-	fill: #8cc63f;
+/* Unchecked */
+.toggle-button-panel-body,
+.toggle-button-knob-body {
+	color: #FFFFFF;
+	transition: color 200ms ease;
+}
+.toggle-button-panel-border,
+.toggle-button-knob-border {
+	color: #999999;
+	transition: color 200ms ease;
+}
+.toggle-button-knob-body,
+.toggle-button-knob-border {
+	transition: transform 200ms cubic-bezier(0.82, 0.02, 0.21, 0.99), color 200ms ease;
 }
 
-/* Move Knob */
-#cb:checked + .tb--svg .knob__body,
-#cb:checked + .tb--svg .knob__border {
+/* Checked State */
+.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-body,
+.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-border {
 	transform: translateX(24px);
+}
+.toggle-button-trigger:checked + .toggle-button .toggle-button-panel-body,
+.toggle-button-trigger:checked + .toggle-button .toggle-button-panel-border,
+.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-border {
+	color: #8cc63f;
+}
+
+/* Custom Color */
+.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-panel-body,
+.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-panel-border,
+.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-knob-border {
+	color: red;
 }
