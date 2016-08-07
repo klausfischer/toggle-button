@@ -1,0 +1,32 @@
+
+.tb--svg {
+	width: 48px;
+}
+/* SVG Styles */
+.panel__body,
+.knob__body {
+	fill: #FFFFFF;
+	transition: fill 100ms ease;
+}
+.panel__border,
+.knob__border {
+	fill: #999999;
+	transition: fill 100ms ease;
+}
+.knob__body,
+.knob__border {
+	transition: transform 100ms ease-in-out;
+}
+
+/* On */
+#cb:checked + .tb--svg .panel__body,
+#cb:checked + .tb--svg .panel__border,
+#cb:checked + .tb--svg .knob__border {
+	fill: #8cc63f;
+}
+
+/* Move Knob */
+#cb:checked + .tb--svg .knob__body,
+#cb:checked + .tb--svg .knob__border {
+	transform: translateX(24px);
+}
