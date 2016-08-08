@@ -9,6 +9,7 @@
 	border: 1px solid #999;
 	border-radius: 0.5em;
 	position: relative;
+	top: 3px;
 	transition: background-color 200ms ease, border-color 200ms ease;
 }
 .toggle-button-trigger:checked + .toggle-button {
