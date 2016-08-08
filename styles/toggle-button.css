@@ -1,46 +1,47 @@
-label {
-	display: inline-block;
-}
 .toggle-button-trigger {
 	display: none;
 }
+/* Panel */
 .toggle-button {
-	width: 32px;
-	height: 18px;
+	display: inline-block;
+	width: 2em;
+	height: 1em;
+	border: 1px solid #999;
+	border-radius: 0.5em;
 	position: relative;
-	top: 4px;
+	transition: background-color 200ms ease, border-color 200ms ease;
+}
+.toggle-button-trigger:checked + .toggle-button {
+	background-color: #8cc63f;
+	border-color: #8cc63f;
 }
 
-/* Unchecked */
-.toggle-button-panel-body,
-.toggle-button-knob-body {
-	color: #FFFFFF;
-	transition: color 200ms ease;
-}
-.toggle-button-panel-border,
-.toggle-button-knob-border {
-	color: #999999;
-	transition: color 200ms ease;
-}
-.toggle-button-knob-body,
-.toggle-button-knob-border {
-	transition: transform 200ms cubic-bezier(0.82, 0.02, 0.21, 0.99), color 200ms ease;
-}
+/* Knob */
+.toggle-button:before {
+	content: '';
+	display: block;
+	width: 1em;
+	height: 1em;
+	border-radius: 0.5em;
+	position: absolute;
+	top: -1px;
+    left: -1px;
 
-/* Checked State */
-.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-body,
-.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-border {
-	transform: translateX(24px);
+	background-color: #fff;
+	border: 1px solid #999;
+	transition: transform 200ms cubic-bezier(0.82, 0.02, 0.21, 0.99), border-color 200ms ease;
 }
-.toggle-button-trigger:checked + .toggle-button .toggle-button-panel-body,
-.toggle-button-trigger:checked + .toggle-button .toggle-button-panel-border,
-.toggle-button-trigger:checked + .toggle-button .toggle-button-knob-border {
-	color: #8cc63f;
+.toggle-button-trigger:checked + .toggle-button:before {
+	transform: translateX(1em);
+	border-color: #8cc63f;
 }
 
 /* Custom Color */
-.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-panel-body,
-.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-panel-border,
-.toggle-button-trigger:checked + .toggle-button.toggle-button--error .toggle-button-knob-border {
-	color: red;
+
+.toggle-button-trigger:checked + .toggle-button--error {
+	background-color: #c1272d;
+	border-color: #c1272d;
+}
+.toggle-button-trigger:checked + .toggle-button--error:before {
+	border-color: #c1272d;
 }
